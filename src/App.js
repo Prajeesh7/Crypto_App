@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
-import { Layout, Space, Switch, Typography } from "antd";
+import { Route, Routes, Link } from "react-router-dom";
+import { Layout, Space, Typography } from "antd";
 import "./App.css";
 
 import {
@@ -19,27 +19,16 @@ const App = () => {
         <Navbar />
       </div>
       <div className="main">
-        <Layout>
-          <div className="routes">
-            <Switch>
-              <Route exact path="/">
-                <Homepage />
-              </Route>
-              <Route exact path="/exchange">
-                <Exchange />
-              </Route>
-              <Route exact path="/cryptocurrencies">
-                <Cryptocurrencies />
-              </Route>
-              <Route exact path="/crypto:coinId">
-                <CryptoDetails />
-              </Route>
-              <Route exact path="/news">
-                <News />
-              </Route>
-            </Switch>
-          </div>
-        </Layout>
+        <div className="routes">
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Homepage/>}/>
+              <Route path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
+              <Route path="/exchange" element={<Exchange/>}/>
+              <Route path="/news" element={<News/>}/>            
+            </Routes>
+          </Layout>
+        </div>
       </div>
       <div className="footer"></div>
     </div>
