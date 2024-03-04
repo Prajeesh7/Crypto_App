@@ -22,15 +22,29 @@ const App = () => {
         <div className="routes">
           <Layout>
             <Routes>
-              <Route path="/" element={<Homepage/>}/>
-              <Route path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
-              <Route path="/exchange" element={<Exchange/>}/>
-              <Route path="/news" element={<News/>}/>            
+              <Route path="/" element={<Homepage />} />
+              <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+              <Route path="/exchange" element={<Exchange />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/crypto/:coinId" element={<CryptoDetails />} />
             </Routes>
           </Layout>
         </div>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ textAlign: "center", color: "white" }}
+          >
+            Crytoworld <br/>
+             All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to='/'>Home</Link>
+            <Link to='/exchange'>Exchange</Link>
+            <Link to='/news'>News</Link>
+          </Space>
+        </div>
       </div>
-      <div className="footer"></div>
     </div>
   );
 };
